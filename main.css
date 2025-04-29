@@ -1,89 +1,86 @@
-.header1{
-    position: relative;
-    height: 100vh; /* Header nimmt die gesamte Höhe des Viewports ein */
+body{
+    background-color: lightgrey;
+}
+
+.logoheader{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 1; /* Hintergrund */
+    justify-content: center; /* Center the logo horizontally */
+    align-items: center; /* Center the logo vertically */
+    height: 90px; /* Adjust height as needed */
+    background: #4CAF50;
 }
 
+.w3-bar.w3-green {
+    background-color: #2b9f2b !important; /* Replace #yourCustomColor with your desired color */
+    color: white !important; /* Replace #yourCustomTextColor with your desired text color */
+    font-size: 20px !important; /* Adjust font size as needed */
+    font-family: Poppins !important; /* Replace with your desired font */
+}
 
-* {box-sizing:border-box}
-
-/* Slideshow container */
-.slideshow-container {
-    max-width: 1000px;
+.logo {
+    width: 115px; /* Adjust size as needed */
+    height: 115px;
     position: relative;
-    margin: auto;
-
+    top: 7px;
 }
 
-/* Hide the images by default */
-.mySlides {
-    display: none;
-    height: 100vh; /* Bilder passen sich der Header-Höhe an */
-    object-fit: cover;
-    z-index: 0; /* Slideshow im Hintergrund */
+.slideshow {
+    position: relative; /* Make the slideshow container a positioning context */
+    text-align: center; /* Center text inside the slideshow */
+    margin: auto; /* Center the slideshow horizontally */
+    width: 100%;
+    height: 80vh; /* Match the image height */
 }
 
-/* Next & previous buttons */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
+.headers {
+    position: absolute; /* Position headers over the slideshow */
+    top: 40%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    z-index: 2; /* Ensure headers are above the slideshow */
+    text-align: center;
+}
+
+.header2{
+    color: black;
+    font-size: 60px;
     font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
 }
 
-/* Position the "next button" to the right */
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+.header3{
+    color: black;
+    font-size: 20px;
+
 }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
+.mySlides img{
+    margin-top: 30px;
+    width: 170vh;
+    height: 80vh;
+    object-fit: cover; /* Bild passt sich dem Container an */
+    opacity: 50%;
+    object-position: top;
 }
 
 /* Caption text */
 .text {
-    color: #f2f2f2;
+    color: black;
+    font-weight: bold;
     font-size: 15px;
-    padding: 8px 12px;
+    bottom:1px;
     position: absolute;
-    bottom: 8px;
     width: 100%;
     text-align: center;
 }
 
-/* Number text (1/3 etc) */
-.numbertext {
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-}
 
 /* The dots/bullets/indicators */
 .dot {
     cursor: pointer;
     height: 15px;
     width: 15px;
-    margin: 0 2px;
+    margin-top: 40px;
+    margin-left: 4px;
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
@@ -91,7 +88,7 @@
 }
 
 .active, .dot:hover {
-    background-color: #717171;
+    background-color: grey;
 }
 
 /* Fading animation */
@@ -105,19 +102,7 @@
     to {opacity: 1}
 }
 
-.header2, .header3 {
-    color: white;
-    z-index: 2; /* Sicherstellen, dass der Text über dem Hintergrund liegt */
-}
-
-.header2, .header3, .button1 {
-    position: relative; /* Position festlegen */
-    z-index: 2; /* Inhalte vor der Slideshow */
-    color: black;
-}
-
 .button1{
-    z-index: 2;
     padding: 10px 20px;
     font-size: 18px;
     background-color: #4CAF50;
@@ -129,5 +114,5 @@
 }
 
 .button1:hover {
-    background-color: #45a049;
+    background-color: grey;
 }

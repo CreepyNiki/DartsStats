@@ -1,0 +1,168 @@
+body{
+    background-color: lightgrey;
+}
+
+.logoheader{
+    display: flex;
+    justify-content: center; /* Center the logo horizontally */
+    align-items: center; /* Center the logo vertically */
+    height: 90px; /* Adjust height as needed */
+    background: #4CAF50;
+}
+
+.w3-top {
+    z-index: 2 !important; /* Set a high z-index to bring it to the foreground */
+}
+
+.w3-bar.w3-green {
+    background-color: #2b9f2b !important; /* Replace #yourCustomColor with your desired color */
+    color: white !important; /* Replace #yourCustomTextColor with your desired text color */
+    font-size: 20px !important; /* Adjust font size as needed */
+    font-family: Lato, sans-serif !important; /* Replace with your desired font */
+}
+
+.logo {
+    width: 115px; /* Adjust size as needed */
+    height: 115px;
+    position: relative;
+    top: 7px;
+}
+
+.slideshow {
+    position: relative; /* Make the slideshow container a positioning context */
+    text-align: center; /* Center text inside the slideshow */
+    margin: auto; /* Center the slideshow horizontally */
+    width: 100%;
+    height: 80vh; /* Match the image height */
+}
+
+.headers {
+    position: absolute; /* Position headers over the slideshow */
+    top: 40%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    z-index: 1; /* Ensure headers are above the slideshow */
+    text-align: center;
+    font-family: Lato, sans-serif;
+}
+
+.header2{
+    color: black;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.header3{
+    color: black;
+    font-size: 20px;
+}
+
+.mySlides img{
+    margin-top: 30px;
+    width: 170vh;
+    height: 80vh;
+    object-fit: cover; /* Bild passt sich dem Container an */
+    opacity: 50%;
+    object-position: top;
+}
+
+/* Caption text */
+.text {
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    bottom:1px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-family: Lato, sans-serif;
+}
+
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin-top: 40px;
+    margin-left: 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: grey;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+.button1{
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.button1:hover {
+    background-color: grey;
+}
+
+.logoBig{
+    position: relative;
+    left: 20vh;
+    top: 15vh;
+}
+
+.dartboard{
+    position: relative;
+    right: 25vh;
+}
+
+.fact{
+    font-size: 20px;
+    font-family: Lato, sans-serif;
+}
+.footer {
+    display: flex;
+    justify-content: space-between; /* Distribute elements evenly */
+    align-items: center; /* Align elements vertically */
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 100px; /* Adjust padding as needed */
+    font-family: Lato, sans-serif;
+}
+
+.footerLogo {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    left: 250px;
+}
+
+.footerText {
+    text-align: center; /* Center-align the text */
+    flex: 1; /* Allow the text to take up available space */
+}
+
+.gitHubIcon {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    position: relative;
+    right: 250px;
+}

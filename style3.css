@@ -1,0 +1,60 @@
+body{
+    background-color: lightgrey;
+}
+
+.logoheader{
+    display: flex;
+    justify-content: center; /* Center the logo horizontally */
+    align-items: center; /* Center the logo vertically */
+    height: 90px; /* Adjust height as needed */
+    background: #4CAF50;
+}
+
+.w3-top {
+    z-index: 2 !important; /* Set a high z-index to bring it to the foreground */
+}
+
+.w3-bar.w3-green {
+    background-color: #2b9f2b !important; /* Replace #yourCustomColor with your desired color */
+    color: white !important; /* Replace #yourCustomTextColor with your desired text color */
+    font-size: 20px !important; /* Adjust font size as needed */
+    font-family: Lato, sans-serif !important; /* Replace with your desired font */
+}
+
+.logo {
+    width: 115px; /* Adjust size as needed */
+    height: 115px;
+    position: relative;
+    top: 7px;
+}
+
+
+.footer {
+    display: flex;
+    justify-content: space-between; /* Distribute elements evenly */
+    align-items: center; /* Align elements vertically */
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 100px; /* Adjust padding as needed */
+    font-family: Lato, sans-serif;
+}
+
+.footerLogo {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    left: 250px;
+}
+
+.footerText {
+    text-align: center; /* Center-align the text */
+    flex: 1; /* Allow the text to take up available space */
+}
+
+.gitHubIcon {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    position: relative;
+    right: 250px;
+}

@@ -10,11 +10,15 @@ body{
     background: #4CAF50;
 }
 
+.w3-top {
+    z-index: 2 !important; /* Set a high z-index to bring it to the foreground */
+}
+
 .w3-bar.w3-green {
     background-color: #2b9f2b !important; /* Replace #yourCustomColor with your desired color */
     color: white !important; /* Replace #yourCustomTextColor with your desired text color */
     font-size: 20px !important; /* Adjust font size as needed */
-    font-family: Poppins !important; /* Replace with your desired font */
+    font-family: Lato, sans-serif !important; /* Replace with your desired font */
 }
 
 .logo {
@@ -37,8 +41,9 @@ body{
     top: 40%; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Adjust for centering */
-    z-index: 2; /* Ensure headers are above the slideshow */
+    z-index: 1; /* Ensure headers are above the slideshow */
     text-align: center;
+    font-family: Lato, sans-serif;
 }
 
 .header2{
@@ -50,7 +55,6 @@ body{
 .header3{
     color: black;
     font-size: 20px;
-
 }
 
 .mySlides img{
@@ -71,6 +75,7 @@ body{
     position: absolute;
     width: 100%;
     text-align: center;
+    font-family: Lato, sans-serif;
 }
 
 
@@ -115,4 +120,49 @@ body{
 
 .button1:hover {
     background-color: grey;
+}
+
+.logoBig{
+    position: relative;
+    left: 20vh;
+    top: 15vh;
+}
+
+.dartboard{
+    position: relative;
+    right: 25vh;
+}
+
+.fact{
+    font-size: 20px;
+    font-family: Lato, sans-serif;
+}
+.footer {
+    display: flex;
+    justify-content: space-between; /* Distribute elements evenly */
+    align-items: center; /* Align elements vertically */
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 100px; /* Adjust padding as needed */
+    font-family: Lato, sans-serif;
+}
+
+.footerLogo {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    left: 250px;
+}
+
+.footerText {
+    text-align: center; /* Center-align the text */
+    flex: 1; /* Allow the text to take up available space */
+}
+
+.gitHubIcon {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    position: relative;
+    right: 250px;
 }

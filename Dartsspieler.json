@@ -1,0 +1,262 @@
+{
+        "players": {
+        "player": [
+        {
+        "name": "Luke Humphries",
+        "dartsorakel_id": "34"
+        },
+        {
+        "name": "Luke Littler",
+        "dartsorakel_id": "5403"
+        },
+        {
+        "name": "Michael van Gerwen",
+        "dartsorakel_id": "3"
+        },
+        {
+        "name": "Stephen Bunting",
+        "dartsorakel_id": "36"
+        },
+        {
+        "name": "Rob Cross",
+        "dartsorakel_id": "29"
+        },
+        {
+        "name": "Jonny Clayton",
+        "dartsorakel_id": "20"
+        },
+        {
+        "name": "Nathan Aspinall",
+        "dartsorakel_id": "8"
+        },
+        {
+        "name": "Damon Heta",
+        "dartsorakel_id": "13"
+        },
+        {
+        "name": "Chris Dobey",
+        "dartsorakel_id": "39"
+        },
+        {
+        "name": "Dave Chisnall",
+        "dartsorakel_id": "21"
+        },
+        {
+        "name": "James Wade",
+        "dartsorakel_id": "7"
+        },
+        {
+        "name": "Gerwyn Price",
+        "dartsorakel_id": "2"
+        },
+        {
+        "name": "Josh Rock",
+        "dartsorakel_id": "20114"
+        },
+        {
+        "name": "Peter Wright",
+        "dartsorakel_id": "1"
+        },
+        {
+        "name": "Gary Anderson",
+        "dartsorakel_id": "10"
+        },
+        {
+        "name": "Danny Noppert",
+        "dartsorakel_id": "22"
+        },
+        {
+        "name": "Ross Smith",
+        "dartsorakel_id": "26"
+        },
+        {
+        "name": "Ryan Searle",
+        "dartsorakel_id": "31"
+        },
+        {
+        "name": "Dimitri Van den Bergh",
+        "dartsorakel_id": "25"
+        },
+        {
+        "name": "Michael Smith",
+        "dartsorakel_id": "5"
+        },
+        {
+        "name": "Martin Schindler",
+        "dartsorakel_id": "82"
+        },
+        {
+        "name": "Mike De Decker",
+        "dartsorakel_id": "66"
+        },
+        {
+        "name": "Joe Cullen",
+        "dartsorakel_id": "6"
+        },
+        {
+        "name": "Gian van Veen",
+        "dartsorakel_id": "2641"
+        },
+        {
+        "name": "Daryl Gurney",
+        "dartsorakel_id": "24"
+        },
+        {
+        "name": "Ritchie Edhouse",
+        "dartsorakel_id": "2062"
+        },
+        {
+        "name": "Ryan Joyce",
+        "dartsorakel_id": "28"
+        },
+        {
+        "name": "Andrew Gilding",
+        "dartsorakel_id": "2088"
+        },
+        {
+        "name": "Ricardo Pietreczko",
+        "dartsorakel_id": "153"
+        },
+        {
+        "name": "Dirk van Duijvenbode",
+        "dartsorakel_id": "14"
+        },
+        {
+        "name": "Luke Woodhouse",
+        "dartsorakel_id": "70"
+        },
+        {
+        "name": "Krzysztof Ratajski",
+        "dartsorakel_id": "12"
+        },
+        {
+        "name": "Jermaine Wattimena",
+        "dartsorakel_id": "18"
+        },
+        {
+        "name": "Brendan Dolan",
+        "dartsorakel_id": "23"
+        },
+        {
+        "name": "Raymond van Barneveld",
+        "dartsorakel_id": "1982"
+        },
+        {
+        "name": "Cameron Menzies",
+        "dartsorakel_id": "2221"
+        },
+        {
+        "name": "Scott Williams",
+        "dartsorakel_id": "5137"
+        },
+        {
+        "name": "Martin Lukeman",
+        "dartsorakel_id": "2201"
+        },
+        {
+        "name": "Gabriel Clemens",
+        "dartsorakel_id": "39"
+        },
+        {
+        "name": "Callan Rydz",
+        "dartsorakel_id": "35"
+        },
+        {
+        "name": "Kevin Doets",
+        "dartsorakel_id": "2052"
+        },
+        {
+        "name": "Ricky Evans",
+        "dartsorakel_id": "45"
+        },
+        {
+        "name": "Mickey Mansell",
+        "dartsorakel_id": "65"
+        },
+        {
+        "name": "Madars Razma",
+        "dartsorakel_id": "42"
+        },
+        {
+        "name": "Niels Zonneveld",
+        "dartsorakel_id": "55"
+        },
+        {
+        "name": "Wessel Nijman",
+        "dartsorakel_id": "130"
+        },
+        {
+        "name": "Jose de Sousa",
+        "dartsorakel_id": "4"
+        },
+        {
+        "name": "William O'Connor",
+        "dartsorakel_id": "30"
+        },
+        {
+        "name": "Ian White",
+        "dartsorakel_id": "17"
+        },
+        {
+        "name": "Kim Huybrechts",
+        "dartsorakel_id": "51"
+        },
+        {
+        "name": "Richard Veenstra",
+        "dartsorakel_id": "5145"
+        },
+        {
+        "name": "Keane Barry",
+        "dartsorakel_id": "129"
+        },
+        {
+        "name": "Florian Hempel",
+        "dartsorakel_id": "151"
+        },
+        {
+        "name": "Matt Campbell",
+        "dartsorakel_id": "4120"
+        },
+        {
+        "name": "Jim Williams",
+        "dartsorakel_id": "2390"
+        },
+        {
+        "name": "Rob Owen",
+        "dartsorakel_id": "2255"
+        },
+        {
+        "name": "Alan Soutar",
+        "dartsorakel_id": "5138"
+        },
+        {
+        "name": "Connor Scutt",
+        "dartsorakel_id": "2317"
+        },
+        {
+        "name": "Nick Kenny",
+        "dartsorakel_id": "84"
+        },
+        {
+        "name": "Jeffrey de Graaf",
+        "dartsorakel_id": "2092"
+        },
+        {
+        "name": "Stephen Burton",
+        "dartsorakel_id": "2014"
+        },
+        {
+        "name": "Dylan Slevin",
+        "dartsorakel_id": "20117"
+        },
+        {
+        "name": "Mensur Suljovic",
+        "dartsorakel_id": "9"
+        },
+        {
+        "name": "Ryan Meikle",
+        "dartsorakel_id": "47"
+        }
+        ]
+        }
+        }

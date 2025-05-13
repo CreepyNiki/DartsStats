@@ -37,7 +37,7 @@ async function extractPlayerData(playerName) {
         const statBoxes = document.querySelectorAll('.border.border-gray-300.border-dashed.rounded.min-w-125px.py-3.px-4.me-6.mb-3');
         const generalStats = Array.from(statBoxes).map((el, i) => {
             const labels = [
-                "Einnahmen", "Preisgeld", "FDI Rating", "Order of Merit",
+                "Einnahmen", "Siegquote", "FDI Rating", "Order of Merit",
                 "9-Darter", "Tour Card Jahre", "Höchster Average", "Höchster TV-Average"
             ];
             const value = el.querySelector(".fs-2.fw-bolder")?.textContent.trim() ||
@@ -72,15 +72,47 @@ async function extractPlayerData(playerName) {
                 const cells = row.querySelectorAll("td[style]");
                 const cellData = Array.from(cells).map(cell => cell.textContent.trim());
                 return {
-                    label: labels[i] || `label${i + 1}`,
+                    label: labels[i-1] || `label${i + 1}`,
                     value: cellData[0] || ""
                 };
             }).filter(row => row.value !== "");
         }
 
+        const personalInfo = (() => {
+            const infoDiv = document.querySelector('.d-flex.flex-wrap.fw-bold.fs-6.mb-4.pe-2');
+            if (!infoDiv) return null;
+
+            const items = Array.from(infoDiv.querySelectorAll('a')).map(a => a.textContent.trim());
+
+            let country = null;
+            let city = null;
+            let age = null;
+
+            // Detect country: usually the first item and all uppercase (e.g., "SCO")
+            if (items.length > 0 && /^[A-Z]{3}$/.test(items[0])) {
+                country = items[0];
+            }
+
+            // Find item with age in parentheses (e.g., "22/12/1970 (54)") and extract age
+            const ageItem = items.find(text => /\(\d+\)/.test(text));
+            if (ageItem) {
+                const match = ageItem.match(/\((\d+)\)/);
+                age = match ? match[1] : null;
+            }
+
+            // Look for city (before a comma and a date, e.g., "Somerset, 12/22/70")
+            const cityItem = items.find(text => /,/.test(text) && /\d{1,2}\/\d{1,2}\/\d{2,4}/.test(text));
+            if (cityItem) {
+                city = cityItem.split(",")[0].trim();
+            }
+
+            return { country, city, age };
+        })();
+
         return {
             generalStats,
-            detailedStats
+            detailedStats,
+            personalInfo
         };
     });
 
@@ -88,6 +120,7 @@ async function extractPlayerData(playerName) {
 
     const index = spieler.findIndex(p => p.name === playerName);
     if (index !== -1) {
+        spieler[index].personalInfo = scrapedData.personalInfo;
         spieler[index].generalStats = scrapedData.generalStats;
         spieler[index].detailedStats = scrapedData.detailedStats;
     } else {
@@ -105,4 +138,5 @@ async function updateWholeJSON() {
     }
 }
 updateWholeJSON();
+// extractPlayerData("Luke Littler");
 

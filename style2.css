@@ -4,44 +4,44 @@ body{
 
 .logoheader{
     display: flex;
-    justify-content: center; /* Center the logo horizontally */
-    align-items: center; /* Center the logo vertically */
-    height: 90px; /* Adjust height as needed */
+    justify-content: center;
+    align-items: center;
+    height: 90px;
     background: #4CAF50;
 }
 
 .w3-top {
-    z-index: 2 !important; /* Set a high z-index to bring it to the foreground */
+    z-index: 2 !important;
 }
 
 .w3-bar.w3-green {
-    background-color: #2b9f2b !important; /* Replace #yourCustomColor with your desired color */
-    color: white !important; /* Replace #yourCustomTextColor with your desired text color */
-    font-size: 20px !important; /* Adjust font size as needed */
-    font-family: Lato, sans-serif !important; /* Replace with your desired font */
+    background-color: #2b9f2b !important;
+    color: white !important;
+    font-size: 20px !important;
+    font-family: Lato, sans-serif !important;
 }
 
 .logo {
-    width: 115px; /* Adjust size as needed */
+    width: 115px;
     height: 115px;
     position: relative;
     top: 7px;
 }
 
 .slideshow {
-    position: relative; /* Make the slideshow container a positioning context */
-    text-align: center; /* Center text inside the slideshow */
-    margin: auto; /* Center the slideshow horizontally */
+    position: relative;
+    text-align: center;
+    margin: auto;
     width: 100%;
-    height: 80vh; /* Match the image height */
+    height: 80vh;
 }
 
 .headers {
-    position: absolute; /* Position headers over the slideshow */
-    top: 40%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust for centering */
-    z-index: 1; /* Ensure headers are above the slideshow */
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
     text-align: center;
     font-family: Lato, sans-serif;
 }
@@ -61,12 +61,12 @@ body{
     margin-top: 30px;
     width: 170vh;
     height: 80vh;
-    object-fit: cover; /* Bild passt sich dem Container an */
+    object-fit: cover;
     opacity: 50%;
     object-position: top;
 }
 
-/* Caption text */
+
 .text {
     color: black;
     font-weight: bold;
@@ -79,7 +79,7 @@ body{
 }
 
 
-/* The dots/bullets/indicators */
+
 .dot {
     cursor: pointer;
     height: 15px;
@@ -139,11 +139,11 @@ body{
 }
 .footer {
     display: flex;
-    justify-content: space-between; /* Distribute elements evenly */
-    align-items: center; /* Align elements vertically */
+    justify-content: space-between;
+    align-items: center;
     background-color: #4CAF50;
     color: white;
-    padding: 10px 100px; /* Adjust padding as needed */
+    padding: 10px 100px;
     font-family: Lato, sans-serif;
 }
 
@@ -155,8 +155,8 @@ body{
 }
 
 .footerText {
-    text-align: center; /* Center-align the text */
-    flex: 1; /* Allow the text to take up available space */
+    text-align: center;
+    flex: 1;
 }
 
 .gitHubIcon {

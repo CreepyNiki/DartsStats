@@ -1,43 +1,44 @@
 let myIndex = 0;
 let slideInterval;
 
-// Start the carousel
 carousel();
 factOfTheDay()
 
+// Methode, die den aktuellen Slide anzeigt
 function showSlide(index) {
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
 
-    // Ensure index is within bounds
+    // Falls Index außerhalb der Grenzen ist, zurücksetzen
     if (index >= slides.length) myIndex = 0;
-    if (index < 0) myIndex = slides.length - 1;
 
-    // Hide all slides and remove active class from dots
+    // Alle Sildes ausblenden und alle Punkte deaktivieren
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
         dots[i].classList.remove("active");
     }
 
-    // Show the current slide and activate the corresponding dot
+    // Nur den aktuellen Slide anzeigen und den Style des Punkts aktivieren
     slides[myIndex].style.display = "block";
     dots[myIndex].classList.add("active");
 }
 
+// Methode, die den nächsten Slide anzeigt
 function carousel() {
     myIndex++;
     showSlide(myIndex);
-    slideInterval = setTimeout(carousel, 20000); // Change image every 2 seconds
+    slideInterval = setTimeout(carousel, 20000); // Image soll sich alle 2 Sekunden ändern
 }
 
+// Methode, die den aktuellen Slide anzeigt
 function currentSlide(index) {
-    clearTimeout(slideInterval); // Stop automatic sliding
+    clearTimeout(slideInterval);
     myIndex = index;
     showSlide(myIndex);
-    slideInterval = setTimeout(carousel, 20000); // Restart automatic sliding
+    slideInterval = setTimeout(carousel, 20000);
 }
 
-// Add event listeners to dots
+// Erlaubt das Klicken auf die Punkte, um den Slide zu wechseln
 document.addEventListener("DOMContentLoaded", () => {
     let dots = document.getElementsByClassName("dot");
     for (let i = 0; i < dots.length; i++) {
@@ -45,8 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-
-
+// Funktion, die einen zufälligen Fakt über Darts anzeigt
 function factOfTheDay(){
     let facts = [
         "Luke Littler ist nicht nur der jüngste Weltmeister der PDC-Geschichte, sondern hat bereits mit 18 Jahren über 2 Millionen Pfund durch Preisgelder und Werbedeals verdient.",
@@ -62,9 +62,9 @@ function factOfTheDay(){
         "Phil Taylor hat nie einen 9-Darter bei der WM geworfen.",
         "Michael Smith begann im Jahr 2006 damit Darts zu spielen. Auf dem Weg zur Schule stürzte er vom Fahrrad und verletzte sich, sodass er eine Zeit auf Krücken gehen musste. Während dieser Zeit fing er aus Langeweile an, ein paar Pfeile zu werfen.",
         "James Wade leidet an einer bipolaren Störung. Eine psychische Erkrankung, bei der es zu Stimmungsschwankungen zwischen Depressionen und Hypomanie/Manie kommt."
-
-
     ];
+
+
     let randomIndex = Math.floor(Math.random() * facts.length);
     document.getElementsByClassName("fact")[0].innerHTML = `<strong>Zufälliger Fakt:</strong> ${facts[randomIndex]}`;
 

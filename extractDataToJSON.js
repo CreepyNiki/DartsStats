@@ -40,21 +40,48 @@ async function extractPlayerData(playerName) {
     await page.waitForSelector('.fs-2.fw-bolder');
 
     const scrapedData = await page.evaluate(() => {
-        // Nutzung von ChatGPT nach Eingabe der Klasse des Elements -> Extraktion der genauen Klasse durch ChatGPT
+        let generalStats = [];
+
         const statBoxes = document.querySelectorAll('.border.border-gray-300.border-dashed.rounded.min-w-125px.py-3.px-4.me-6.mb-3');
-        const generalStats = Array.from(statBoxes).map((el, i) => {
+        if (statBoxes.length === 8) {
             const labels = [
                 "Einnahmen", "Siegquote", "FDI Rating", "Order of Merit",
                 "9-Darter", "Tour Card Jahre", "Höchster Average", "Höchster TV-Average"
             ];
-            // Ausgehend vom Ursprungselement werden die Kinder-Elemente extrahiert mit den nötigen Daten
-            const value = el.querySelector(".fs-2.fw-bolder")?.textContent.trim() ||
-                el.querySelector(".fs-2.w-bolder")?.textContent.trim() || "";
-            return {
-                label: labels[i] || `label${i + 1}`,
-                value: value
-            };
-        });
+            generalStats = Array.from(statBoxes).map((el, i) => {
+                const value = el.querySelector(".fs-2.fw-bolder")?.textContent.trim() ||
+                    el.querySelector(".fs-2.w-bolder")?.textContent.trim() || "";
+                return {
+                    label: labels[i] || `label${i + 1}`,
+                    value: value
+                };
+            });
+        } else if (statBoxes.length === 9) {
+            const labels = [
+                "Einnahmen", "Siegquote", "Darts", "FDI Rating", "Order of Merit",
+                "9-Darter", "Tour Card Jahre", "Höchster Average", "Höchster TV-Average"
+            ];
+            generalStats = Array.from(statBoxes).map((el, i) => {
+                const value = el.querySelector(".fs-2.fw-bolder")?.textContent.trim() ||
+                    el.querySelector(".fs-2.w-bolder")?.textContent.trim() || "";
+                return {
+                    label: labels[i] || `label${i + 1}`,
+                    value: value
+                };
+            });
+        }else{
+            const labels = [
+                "Einnahmen", "Siegquote", "FDI Rating", "Order of Merit", "Tour Card Jahre", "Höchster Average", "Höchster TV-Average"
+            ];
+            generalStats = Array.from(statBoxes).map((el, i) => {
+                const value = el.querySelector(".fs-2.fw-bolder")?.textContent.trim() ||
+                    el.querySelector(".fs-2.w-bolder")?.textContent.trim() || "";
+                return {
+                    label: labels[i] || `label${i + 1}`,
+                    value: value
+                };
+            });
+        }
 
         // Extraktion der detaillierten Statistiken von Tableelement auf der Seite
         const table = document.getElementById("playerStatsTable");
@@ -155,5 +182,5 @@ async function updateWholeJSON() {
     }
 }
 updateWholeJSON();
-// extractPlayerData("Luke Littler");
+// extractPlayerData("Gabriel Clemens");
 

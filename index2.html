@@ -23,74 +23,42 @@
     </div>
 </div>
 
-<div class="headers">
-    <h1 class="header2">DartsStats</h1>
-    <p class="header3">Darts-Statistiken in einem nutzerfreundlichen Layout</p>
-    <form action="index2.html">
-        <input class="button1" type="submit" value="Zu den Statistiken" />
-    </form>
-</div>
+<main>
 
-<div class="slideshow">
-
-    <div class="mySlides fade">
-        <img src="assets/img1.png">
-        <div class="text">Peter Wright nach seinem Titel bei der World Darts Championship 2022</div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="assets/img2.png">
-        <div class="text">Phil Taylor nach seinem Titel bei der World Darts Championship 2013</div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="assets/img3.png">
-        <div class="text">Luke Littler nach seinem Titel bei der World Darts Championship 2025</div>
-    </div>
-</div>
-
-<div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-</div>
-
-<div class="w3-row-padding w3-padding-64 w3-container">
-    <div class="w3-content">
-        <div class="w3-twothird">
-            <h1 class="descriptionHeader">DartsStats</h1>
-            <h5 class="w3-padding-16"></h5>
-
-            <p class="w3-text-black">Darts ist eine Sportart, die sich in den letzten Jahren immer größerer Beliebtheit erfreut. Mit dem Aufkommen des damals 16 Jahre alten Luke Littler erreichte Darts 2024 erstmals globale Aufmerksamkeit.</p>
-
-            <p class="w3-text-black"> Das Bild von Darts in verrauchten Pubs auf der Insel ist längst überholt. Die Spieler in der PDC (Professional Darts Corporation) trainieren täglich, arbeiten mit Sportpsychologen und bewegen sich auf höchstem athletischem Niveau – nicht athletisch, aber im mentalen Bereich. Die besten Spieler der Welt kämpfen um Titel und Preisgelder in Millionenhöhe. Die Darts-Weltmeisterschaft im Alexandra Palace in London zieht jedes Jahr Hunderttausende von Zuschauern an und wird weltweit im Fernsehen übertragen.
-            </p>
-
-            <p class="w3-text-black">Das spannende am Darts ist, dass jeder es selber spielen kann und mit ein bisschen Übung auch die höchste Aufnahme im Darts erzielen kann - die 180. Die Kunst ist, diese Leistungen konstant abzurufen. Das gelingt nur mit viel Übung und Training.</p>
+    <div class="filter">
+        <div class="search">
+            <label>
+                <input type="text" placeholder="Search..">
+            </label>
         </div>
 
-        <div class="w3-third w3-center">
-            <img src="assets/Logo_without_background.png" alt="Darts" style="width: 100%" class="logoBig">
+        <div class="select-country">
+            <label for="country-select">Wähle ein Land:</label>
+            <select id="country-select">
+                <option value="all">Alle</option>
+                <option value="eng">England</option>
+                <option value="ned">Niederlande</option>
+                <option value="wal">Wales</option>
+                <option value="ger">Deutschland</option>
+                <option value="sco">Schottland</option>
+                <option value="bel">Belgien</option>
+                <option value="aut">Österreich</option>
+                <option value="aus">Australien</option>
+                <option value="can">Kanada</option>
+                <option value="irl">Irland</option>
+                <option value="ltv">Lettland</option>
+                <option value="pol">Polen</option>
+                <option value="por">Portugal</option>
+                <option value="swe">Schweden</option>
+            </select>
         </div>
     </div>
+
+<div class="output">
 </div>
 
-<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
-    <div class="w3-content">
-        <div class="w3-third w3-center">
-            <img src="assets/Dartscheibe.png" alt="Darts" style="width: 100%" class="dartboard">
-        </div>
 
-        <div class="w3-twothird">
-            <h1>Statistiken im Darts</h1>
-            <h5 class="w3-padding-32">Ein Leg im Darts beginnt mit 501 Punkten. Ziel ist es, diese Zahl mit so wenigen Würfen wie möglich exakt auf null zu reduzieren – und das Leg mit einem Treffer auf ein Doppelfeld zu beenden. Dabei spielt Mathematik eine zentrale Rolle: Über Jahre hinweg haben Spieler optimale Rechenwege und Wurfkombinationen perfektioniert. Darts ist daher ein hochpräziser, zahlenbasierter Sport, in dem sich Leistungen besonders gut durch Statistiken abbilden und analysieren lassen.</h5>
-        </div>
-    </div>
-</div>
-
-<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-    <h1 class="fact">Fact of the day: </h1>
-</div>
+</main>
 
 <footer>
     <div class="footer">
@@ -99,7 +67,6 @@
         <a href="https://github.com/CreepyNiki/DartsStats"><img class="gitHubIcon" src="assets/github-brands-solid.svg" alt="Link zum GithubRepo"></a>
     </div>
 </footer>
-
-<script src="main.js"></script>
 </body>
+<script src="Ajax.js" defer></script>
 </html>

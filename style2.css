@@ -28,115 +28,127 @@ body{
     top: 7px;
 }
 
-.slideshow {
+main {
+    display: flex;
+    flex-direction: row;
+    height: 70vh;
+    margin-top: 140px;
+}
+
+.filter {
+    display: flex;
+    margin-top: 170px;
+    margin-left: 20px;
+    flex-direction: column;
+    background: #f0f1f5;
+    padding: 28px 22px 22px 22px;
+    width: 270px;
+    min-width: 220px;
+    box-sizing: border-box;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px 0 rgba(60,72,88,0.13);
+    gap: 28px;
+}
+
+.search label {
+    width: 100%;
+    display: flex;
+    align-items: center;
     position: relative;
-    text-align: center;
-    margin: auto;
+}
+
+.search input[type="text"] {
     width: 100%;
-    height: 80vh;
+    padding: 12px 16px 12px 40px;
+    font-size: 1.08em;
+    border-radius: 8px;
+    border: 1.5px solid #d1d5db;
+    background: #fff;
+    transition: border 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+    outline: none;
 }
 
-.headers {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    text-align: center;
-    font-family: Lato, sans-serif;
+.search input[type="text"]:focus {
+    border: 1.5px solid #4CAF50;
+    box-shadow: 0 0 0 2px #c8f7c5;
 }
 
-.header2{
-    color: black;
-    font-size: 60px;
-    font-weight: bold;
-}
-
-.header3{
-    color: black;
-    font-size: 20px;
-}
-
-.mySlides img{
-    margin-top: 30px;
-    width: 170vh;
-    height: 80vh;
-    object-fit: cover;
-    opacity: 50%;
-    object-position: top;
-}
-
-
-.text {
-    color: black;
-    font-weight: bold;
-    font-size: 15px;
-    bottom:1px;
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    font-family: Lato, sans-serif;
-}
-
-
-
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin-top: 40px;
-    margin-left: 4px;
-    background-color: #bbb;
-    border-radius: 50%;
+.search label::before {
+    content: '';
     display: inline-block;
-    transition: background-color 0.6s ease;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    background: url('data:image/svg+xml;utf8,<svg fill="gray" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.9 14.32a8 8 0 111.41-1.41l4.3 4.3a1 1 0 01-1.42 1.42l-4.3-4.3zM14 8a6 6 0 11-12 0 6 6 0 0112 0z"/></svg>') no-repeat center center;
+    pointer-events: none;
 }
 
-.active, .dot:hover {
-    background-color: grey;
+.select-country label {
+    font-size: 1em;
+    margin-bottom: 7px;
+    color: #333;
+    font-weight: 500;
+    letter-spacing: 0.01em;
 }
 
-/* Fading animation */
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
+#country-select {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 1.08em;
+    border-radius: 8px;
+    border: 1.5px solid #d1d5db;
+    background: #fff;
+    min-height: 44px;
+    box-sizing: border-box;
+    transition: border 0.2s, box-shadow 0.2s;
+    margin-top: 4px;
 }
 
-@keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
+#country-select:focus {
+    border: 1.5px solid #4CAF50;
+    box-shadow: 0 0 0 2px #c8f7c5;
+    outline: none;
+    background: #fff;
 }
 
-.button1{
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-.button1:hover {
-    background-color: grey;
-}
-
-.logoBig{
-    position: relative;
-    left: 20vh;
-    top: 15vh;
-}
-
-.dartboard{
-    position: relative;
-    right: 25vh;
-}
-
-.fact{
-    font-size: 20px;
+.output {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: Lato, sans-serif;
 }
+
+.players-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Lato, sans-serif;
+    border-spacing: 18px;
+}
+
+.players-cell {
+    width: 360px;              /* Breite der Zelle */
+    height: 500px;             /* Höhe der Zelle */
+    border-radius: 8px;
+    background-image: url("assets/Bronze.png");
+    background-size: 360px 500px;   /* Bild kleiner skalieren */
+    background-repeat: no-repeat;
+    background-position: center 20px; /* Bild zentrieren, etwas nach unten */
+    vertical-align: top;
+}
+
+.players-row {
+
+}
+
+.player{
+
+}
+
 .footer {
     display: flex;
     justify-content: space-between;

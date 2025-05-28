@@ -51,31 +51,55 @@ request.onload = function () {
             const player = document.createElement("div");
             player.className = "player";
 
-
-            // <p>Average: ${detailedStats[0].value}</p>
-            // <p>180er: ${detailedStats[1].value}</p>
-            // <p>Doppelquote: ${detailedStats[2].value}</p>
-            // <p>Siegquote: ${siegquote}</p>
-            // <p>9-Darter: ${neunDarter}</p>
-            // <p>T20-Trefferquote: ${detailedStats[24].value}</p>
-            // <p>T19-Trefferquote: ${detailedStats[26].value}</p>
-            // <p>FDI Rating: ${fdiRating}</p>
-
             player.innerHTML = `
   <div class="player-info">
-    <div class="oom">${orderOfMerit.value}</div>
-    <img class="flag" src="assets/Flags/${info.country}.gif" alt="Flagge">
-    <div class="age-city">
-      <span>Alter: ${info.age}</span><br>
-      <span>${info.city}</span>
-    </div>
+    <div class="oom">${orderOfMerit?.value || "N/A"}</div>
+    <img class="flag" src="assets/Flags/${info?.country || "default"}.gif" alt="Flagge">
+<div class="age-city">
+  <span class="age">Alter: ${info?.age || "Unbekannt"}</span>
+  <span class="city">${info?.city || "Unbekannt"}</span>
+</div>
+<a href="map.html?city=${encodeURIComponent(sammlung.players[i].personalInfo.city)}">
+  <img class="marker" src="assets/marker.png" alt="Marker">
+</a>
+          
   </div>
   <img class="player-picture" src="assets/PlayerPictures/${sammlung.players[i].name}.png" alt="Spielerbild">
   <div class="player-name">${sammlung.players[i].name}</div>
+  <div class="stats">
+    <div class="stat-block">
+      <span class="stat-label">Average</span>
+      <span class="stat-value">${detailedStats[0]?.value || "0"}</span>
+    </div>
+    <div class="stat-block">
+      <span class="stat-label">180er</span>
+      <span class="stat-value">${detailedStats[1]?.value || "0"}</span>
+    </div>
+    <div class="stat-block">
+      <span class="stat-label">Doppelquote</span>
+      <span class="stat-value">${detailedStats[2]?.value || "0"}</span>
+    </div>
+    <div class="stat-block">
+      <span class="stat-label">Siegquote</span>
+      <span class="stat-value">${siegquote?.replace(/^%/, "")}%</span>
+    </div>
+    <div class="stat-block">
+      <span class="stat-label">9-Darter</span>
+      <span class="stat-value">${neunDarter || "0"}</span>
+    </div>
+    <div class="stat-block">
+      <span class="stat-label">FDI Rating</span>
+      <span class="stat-value">${fdiRating || "0"}</span>
+    </div>
+  </div>
 `;
+
+            if (sammlung.players[i].name === "Raymond van Barneveld") {
+                player.querySelector(".player-name").style.fontSize = "1.6em";
+            }
+
             cell.appendChild(player);
             row.appendChild(cell);
-
         }
 
         output.appendChild(table);
@@ -101,8 +125,8 @@ request.onload = function () {
         } else if (nation === "wal") {
             const filteredPlayers = sammlung.players.filter(player => player.personalInfo.country === "WAL");
             displayFilteredPlayers(filteredPlayers);
-        } else if (nation === "ire") {
-            const filteredPlayers = sammlung.players.filter(player => player.personalInfo.country === "IRE");
+        } else if (nation === "irl") {
+            const filteredPlayers = sammlung.players.filter(player => player.personalInfo.country === "IRL");
             displayFilteredPlayers(filteredPlayers);
         } else if (nation === "aus") {
             const filteredPlayers = sammlung.players.filter(player => player.personalInfo.country === "AUS");
@@ -129,13 +153,12 @@ request.onload = function () {
             const filteredPlayers = sammlung.players.filter(player => player.personalInfo.country === "LTV");
             displayFilteredPlayers(filteredPlayers);
         } else if (nation === "aut") {
-            const filteredPlayers = sammlung.players.filter(player => player.personalInfo.country === "aut");
+            const filteredPlayers = sammlung.players.filter(player => player.personalInfo.country === "AUT");
             displayFilteredPlayers(filteredPlayers);
         }
     }
 
     function displayFilteredPlayers(filteredPlayers) {
-        console.log(filteredPlayers)
         const output = document.querySelector(".output");
         output.innerHTML = "";
 
@@ -171,27 +194,49 @@ request.onload = function () {
             const player = document.createElement("div");
             player.className = "player";
 
-            // <p>Average: ${detailedStats[0].value}</p>
-            // <p>180er: ${detailedStats[1].value}</p>
-            // <p>Doppelquote: ${detailedStats[2].value}</p>
-            // <p>Siegquote: ${siegquote}</p>
-            // <p>9-Darter: ${neunDarter}</p>
-            // <p>T20-Trefferquote: ${detailedStats[24].value}</p>
-            // <p>T19-Trefferquote: ${detailedStats[26].value}</p>
-            // <p>FDI Rating: ${fdiRating}</p>
-
             player.innerHTML = `
   <div class="player-info">
-    <div class="oom">${orderOfMerit.value}</div>
-    <img class="flag" src="assets/Flags/${info.country}.gif" alt="Flagge">
-    <div class="age-city">
-      <span>Alter: ${info.age}</span><br>
-      <span>${info.city}</span>
-    </div>
+    <div class="oom">${orderOfMerit?.value || "N/A"}</div>
+    <img class="flag" src="assets/Flags/${info?.country || "default"}.gif" alt="Flagge">
+<div class="age-city">
+  <span class="age">Alter: ${info?.age || "Unbekannt"}</span>
+  <span class="city">Home: ${info?.city || "Unbekannt"}</span>
+</div>
+                <img class="marker" src="assets/marker.png" alt="Marker">
   </div>
   <img class="player-picture" src="assets/PlayerPictures/${filteredPlayers[i].name}.png" alt="Spielerbild">
   <div class="player-name">${filteredPlayers[i].name}</div>
+  <div class="stats">
+    <div class="stat-block">
+      <span class="stat-label">Average</span>
+      <span class="stat-value">${detailedStats[0]?.value || "0"}</span>
+    </div>
+    <div class="stat-block">
+      <span class="stat-label">180er</span>
+      <span class="stat-value">${detailedStats[1]?.value || "0"}</span>
+    </div>
+    <div class="stat-block">
+      <span class="stat-label">Doppelquote</span>
+      <span class="stat-value">${detailedStats[2]?.value || "0"}</span>
+    </div>
+    <div class="stat-block">
+      <span class="stat-label">Siegquote</span>
+      <span class="stat-value">${siegquote?.replace(/^%/, "")}%</span>
+    </div>
+    <div class="stat-block">
+      <span class="stat-label">9-Darter</span>
+      <span class="stat-value">${neunDarter || "0"}</span>
+    </div>
+    <div class="stat-block">
+      <span class="stat-label">FDI Rating</span>
+      <span class="stat-value">${fdiRating || "0"}</span>
+    </div>
+  </div>
 `;
+
+            if (filteredPlayers[i].name === "Raymond van Barneveld") {
+                player.querySelector(".player-name").style.fontSize = "1.6em";
+            }
 
             cell.appendChild(player);
             row.appendChild(cell);
@@ -204,5 +249,18 @@ request.onload = function () {
     displayallPlayers()
 
     window.displayNationPlayers = displayNationPlayers;
+
+    window.searchPlayers = function() {
+        const input = document.getElementById("search-input");
+        const filter = input.value.toLowerCase();
+        const filteredPlayers = sammlung.players.filter(player =>
+            player.name.toLowerCase().includes(filter)
+        );
+        displayFilteredPlayers(filteredPlayers);
+        if (filteredPlayers.length === 0) {
+            const output = document.querySelector(".output");
+            output.innerHTML = "<p>Keine Spieler gefunden.</p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>";
+        }
+    };
 };
 

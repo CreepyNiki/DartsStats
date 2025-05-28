@@ -3271,7 +3271,7 @@
       }
     },
     {
-      "name": "Dimitri Van den Bergh",
+      "name": "Dimitri van den Bergh",
       "dartsorakel_id": "25",
       "generalStats": [
         {
@@ -6947,8 +6947,8 @@
       ],
       "personalInfo": {
         "country": "GER",
-        "city": "Saarlouis",
-        "age": "41"
+        "age": "41",
+        "city": "Saarlouis"
       }
     },
     {
@@ -8110,7 +8110,7 @@
       ],
       "personalInfo": {
         "country": "NED",
-        "city": Uitgeest,
+        "city": "Uitgeest",
         "age": "24"
       }
     },

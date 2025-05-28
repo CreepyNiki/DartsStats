@@ -4,10 +4,15 @@
   <title>DartsStats</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="map.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
   <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
-
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+          crossorigin=""></script>
 </head>
 <body>
 
@@ -16,7 +21,7 @@
     <img src="assets/Logo_without_background.png" alt="Logo" class="logo">
   </div>
 <main>
-
+  <div id="map"></div>
 </main>
 
 <footer>
@@ -27,5 +32,5 @@
   </div>
 </footer>
 </body>
-<script src="main.js" defer></script>
+<script src="map.js" defer></script>
 </html>

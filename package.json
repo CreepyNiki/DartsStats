@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@owsas/nominatim-js": "^1.0.1",
     "puppeteer": "^24.9.0"
   }
 }

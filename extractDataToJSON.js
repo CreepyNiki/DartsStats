@@ -151,9 +151,16 @@ async function extractPlayerData(playerName) {
     });
     await browser.close();
 
+
+
     // Hier wird die JSON-Datei in Bezug auf einen Spieler aktualisiert
+    // Vorhandene city übernehmen, falls vorhanden -> Dartsorakel hat sehr ungenaue City Angaben
     const index = spieler.findIndex(p => p.name === playerName);
     if (index !== -1) {
+        const existingCity = spieler[index].personalInfo?.city;
+        if (existingCity) {
+            scrapedData.personalInfo.city = existingCity;
+        }
         spieler[index].personalInfo = scrapedData.personalInfo;
         spieler[index].generalStats = scrapedData.generalStats;
         spieler[index].detailedStats = scrapedData.detailedStats;
@@ -173,6 +180,6 @@ async function updateWholeJSON() {
             await extractPlayerData(spieler[i].name);
     }
 }
-updateWholeJSON();
-// extractPlayerData("Gabriel Clemens");
+// updateWholeJSON();
+extractPlayerData("Gabriel Clemens");
 

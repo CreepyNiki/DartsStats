@@ -69,3 +69,5 @@ function factOfTheDay(){
     document.getElementsByClassName("fact")[0].innerHTML = `<strong>Zufälliger Fakt:</strong> ${facts[randomIndex]}`;
 
 }
+
+

@@ -68,7 +68,7 @@ request.onload = function () {
             player.innerHTML = `
   <div class="player-info">
     <div class="oom">${orderOfMerit?.value || "N/A"}</div>
-    <img class="flag" src="assets/Flags/${info?.country || "default"}.gif" alt="Flagge">
+    <img class="flag" src="assets/Flags/${info?.country || "default"}.png" alt="Flagge">
 <div class="age-city">
   <span class="age">Alter: ${info?.age || "Unbekannt"}</span>
   <span class="city">${info?.city || "Unbekannt"}</span>
@@ -213,7 +213,7 @@ request.onload = function () {
             player.innerHTML = `
   <div class="player-info">
     <div class="oom">${orderOfMerit?.value || "N/A"}</div>
-    <img class="flag" src="assets/Flags/${info?.country || "default"}.gif" alt="Flagge">
+    <img class="flag" src="assets/Flags/${info?.country || "default"}.png" alt="Flagge">
 <div class="age-city">
   <span class="age">Alter: ${info?.age || "Unbekannt"}</span>
   <span class="city">${info?.city || "Unbekannt"}</span>

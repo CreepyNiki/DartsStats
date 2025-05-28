@@ -218,7 +218,9 @@ request.onload = function () {
   <span class="age">Alter: ${info?.age || "Unbekannt"}</span>
   <span class="city">${info?.city || "Unbekannt"}</span>
 </div>
-                <img class="marker" src="assets/Pictures/marker.png" alt="Marker">
+<a href="map.html?city=${encodeURIComponent(sammlung.players[i].personalInfo.city)}">
+  <img class="marker" src="assets/Pictures/marker.png" alt="Marker">
+</a>
   </div>
   <img class="player-picture" src="assets/PlayerPictures/${filteredPlayers[i].name}.png" alt="Spielerbild">
   <div class="player-name">${filteredPlayers[i].name}</div>

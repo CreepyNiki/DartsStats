@@ -65,7 +65,6 @@ request.onload = function () {
             // Generierung der HTML-Struktur der Karten -> Hilfe von ChatGPT
             // encodeURIComponent wird verwendet, um URL Parameter an Leaflet weiterzugeben
             // WICHTIG: Auf den Marker klicken, um die Karte und die Website zu öffnen
-            console.log(sammlung.players[i].name);
             player.innerHTML = `
   <div class="player-info">
     <div class="oom">${orderOfMerit?.value || "N/A"}</div>

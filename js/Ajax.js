@@ -1,3 +1,5 @@
+
+// Code übernommen aus dem Beispiel des Kurses -> File: 250625Start_8
 let sammlung;
 let request = new XMLHttpRequest();
 
@@ -8,27 +10,33 @@ request.onload = function () {
 
     sammlung = request.response;
 
+    // Sortiere die Spieler nach "Order of Merit" -> generiert von Github Copilot
     sammlung.players.sort((a, b) => {
         const aOrder = parseInt(a.generalStats.find(stat => stat.label === "Order of Merit")?.value) || 0;
         const bOrder = parseInt(b.generalStats.find(stat => stat.label === "Order of Merit")?.value) || 0;
         return aOrder - bOrder;
     });
 
+    // Methode zum Anzeigen aller Spieler
     function displayallPlayers() {
         const output = document.querySelector(".output");
         output.innerHTML = "";
 
+        // Erstelle eine Tabelle für die Spieler um die Struktur des Stylings zu vereinfachen
         const table = document.createElement("table");
         table.className = "players-table";
 
         let row;
         for (let i = 0; i < sammlung.players.length; i++) {
+
+            // Erstelle eine neue Zeile alle 4 Spieler
             if (i % 4 === 0) {
                 row = document.createElement("tr");
                 row.className = "players-row";
                 table.appendChild(row);
             }
 
+            // Sammeln der Informationen für jeden Spieler aus der Datenbank des JSON-Files
             const generalStats = sammlung.players[i].generalStats;
             const detailedStats = sammlung.players[i].detailedStats;
             const info = sammlung.players[i].personalInfo;
@@ -38,19 +46,25 @@ request.onload = function () {
             const fdiRating = generalStats.find(stat => stat.label === "FDI Rating")?.value;
 
             const cell = document.createElement("td");
+
+            // Unterschiedliche Karten für die Spieler je nach "Order of Merit"
             cell.className = "players-cell";
             if (orderOfMerit.value <= 16) {
-                cell.style.backgroundImage = "url('assets/Tots.png')";
+                cell.style.backgroundImage = "url('assets/Cards/Top16.png')";
+                // Farbe Golden für die Top 16 Spieler -> sonst nicht sichtbar
                 cell.style.color = "#b19e00";
             } else if (orderOfMerit.value <= 32) {
-                cell.style.backgroundImage = "url('assets/Mittel.png')";
+                cell.style.backgroundImage = "url('assets/Cards/Top32.png')";
             } else {
-                cell.style.backgroundImage = "url('assets/Bronze.png')";
+                cell.style.backgroundImage = "url('assets/Cards/Top64.png')";
             }
 
             const player = document.createElement("div");
             player.className = "player";
 
+            // Generierung der HTML-Struktur der Karten -> Hilfe von ChatGPT
+            // encodeURIComponent wird verwendet, um URL Parameter an Leaflet weiterzugeben
+            // WICHTIG: Auf den Marker klicken, um die Karte und die Website zu öffnen
             player.innerHTML = `
   <div class="player-info">
     <div class="oom">${orderOfMerit?.value || "N/A"}</div>
@@ -60,7 +74,7 @@ request.onload = function () {
   <span class="city">${info?.city || "Unbekannt"}</span>
 </div>
 <a href="map.html?city=${encodeURIComponent(sammlung.players[i].personalInfo.city)}">
-  <img class="marker" src="assets/marker.png" alt="Marker">
+  <img class="marker" src="assets/Pictures/marker.png" alt="Marker">
 </a>
           
   </div>
@@ -94,6 +108,7 @@ request.onload = function () {
   </div>
 `;
 
+            // Anpassung der Schriftgröße für Raymond van Barneveld da Name zu lang ist
             if (sammlung.players[i].name === "Raymond van Barneveld") {
                 player.querySelector(".player-name").style.fontSize = "1.6em";
             }
@@ -105,13 +120,12 @@ request.onload = function () {
         output.appendChild(table);
     }
 
+    // Anbindung der Select-Box für die Nationen -> Filter Methode zum Übergeben der jeweiligen Spieler nach Nation an die Methode displayFilteredPlayers
     function displayNationPlayers(nation) {
         if (nation === "all") {
             displayallPlayers();
         } else if (nation === "eng") {
-            console.log(sammlung.players[0].personalInfo.country);
             const filteredPlayers = sammlung.players.filter(player => player.personalInfo.country === "ENG");
-            console.log(filteredPlayers);
             displayFilteredPlayers(filteredPlayers);
         } else if (nation === "ger") {
             const filteredPlayers = sammlung.players.filter(player => player.personalInfo.country === "GER");
@@ -158,6 +172,7 @@ request.onload = function () {
         }
     }
 
+    // Funktion zum Anzeigen der Spieler nach Nation -> vermutlich hätte man dies auch einfacher lösen können und die Funktion nicht komplett kopieren müssen
     function displayFilteredPlayers(filteredPlayers) {
         const output = document.querySelector(".output");
         output.innerHTML = "";
@@ -172,6 +187,7 @@ request.onload = function () {
                 row.className = "players-row";
                 table.appendChild(row);
             }
+            // Hier Extraktion der Informationen für jeden gefilterten Spieler
             const generalStats = filteredPlayers[i].generalStats;
             const detailedStats = filteredPlayers[i].detailedStats;
             const info = filteredPlayers[i].personalInfo;
@@ -183,12 +199,12 @@ request.onload = function () {
             const cell = document.createElement("td");
             cell.className = "players-cell";
             if (orderOfMerit.value <= 16) {
-                cell.style.backgroundImage = "url('assets/Tots.png')";
+                cell.style.backgroundImage = "url('assets/Cards/Top16.png')";
                 cell.style.color = "#b19e00";
             } else if (orderOfMerit.value <= 32) {
-                cell.style.backgroundImage = "url('assets/Mittel.png')";
+                cell.style.backgroundImage = "url('assets/Cards/Top32.png')";
             } else {
-                cell.style.backgroundImage = "url('assets/Bronze.png')";
+                cell.style.backgroundImage = "url('assets/Cards/Top64.png')";
             }
 
             const player = document.createElement("div");
@@ -200,9 +216,9 @@ request.onload = function () {
     <img class="flag" src="assets/Flags/${info?.country || "default"}.gif" alt="Flagge">
 <div class="age-city">
   <span class="age">Alter: ${info?.age || "Unbekannt"}</span>
-  <span class="city">Home: ${info?.city || "Unbekannt"}</span>
+  <span class="city">${info?.city || "Unbekannt"}</span>
 </div>
-                <img class="marker" src="assets/marker.png" alt="Marker">
+                <img class="marker" src="assets/Pictures/marker.png" alt="Marker">
   </div>
   <img class="player-picture" src="assets/PlayerPictures/${filteredPlayers[i].name}.png" alt="Spielerbild">
   <div class="player-name">${filteredPlayers[i].name}</div>
@@ -250,7 +266,8 @@ request.onload = function () {
 
     window.displayNationPlayers = displayNationPlayers;
 
-    window.searchPlayers = function() {
+    // Methode zum Anzeigen der Spieler nach Suchbegriff -> generiert von GitHub Copilot und angepasst
+    window.searchPlayers = function () {
         const input = document.getElementById("search-input");
         const filter = input.value.toLowerCase();
         const filteredPlayers = sammlung.players.filter(player =>

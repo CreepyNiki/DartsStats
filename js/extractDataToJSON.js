@@ -180,6 +180,6 @@ async function updateWholeJSON() {
             await extractPlayerData(spieler[i].name);
     }
 }
-// updateWholeJSON();
-extractPlayerData("Gabriel Clemens");
+updateWholeJSON();
+// extractPlayerData("Gabriel Clemens");
 

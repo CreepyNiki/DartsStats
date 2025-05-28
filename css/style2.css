@@ -46,7 +46,7 @@ main {
     min-width: 220px;
     box-sizing: border-box;
     border-radius: 18px;
-    box-shadow: 0 4px 24px 0 rgba(60,72,88,0.13);
+    box-shadow: 0 4px 24px 0 rgba(60, 72, 88, 0.13);
     gap: 28px;
 }
 

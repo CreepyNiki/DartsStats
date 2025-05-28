@@ -4,27 +4,31 @@
     <title>DartsStats</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="css/style2.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/Logos/favicon.ico">
 
 </head>
 <body>
 
 <div class="w3-top">
     <div class="logoheader">
-        <img src="assets/Logo_without_background.png" alt="Logo" class="logo">
+        <img src="assets/Logos/Logo_without_background.png" alt="Logo" class="logo">
     </div>
     <div class="w3-bar w3-green w3-card w3-left-align w3-large">
-        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red"
+           href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
+                class="fa fa-bars"></i></a>
         <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large grey">Startseite</a>
         <a href="index2.html" class="w3-bar-item w3-button w3-padding-large w3-grey">Spielerkarten</a>
-        <a href="index3.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large grey">Statistikdefinitionen</a>
+        <a href="index3.html"
+           class="w3-bar-item w3-button w3-hide-small w3-padding-large grey">Statistikdefinitionen</a>
     </div>
 </div>
 
 <main>
 
+    <!-- Search Bar, um nach Spielern zu suchen -->
     <div class="filter">
         <div class="search">
             <label>
@@ -32,6 +36,7 @@
             </label>
         </div>
 
+        <!-- Select Element, um  nach Land zu filtern -->
         <div class="select-country">
             <label for="country-select">Wähle ein Land:</label>
             <select id="country-select" onchange="displayNationPlayers(this.value)">
@@ -54,14 +59,16 @@
         </div>
     </div>
 
-<div class="output">
-</div>
+    <div class="output">
+    </div>
 
     <footer>
         <div class="footer">
-            <img src="assets/Logo_without_background.png" alt="Logo" class="footerLogo">
+            <img src="assets/Logos/Logo_without_background.png" alt="Logo" class="footerLogo">
             <p class="footerText">Niklas Halft Matrikelnummer: 7396949</p>
-            <a href="https://github.com/CreepyNiki/DartsStats"><img class="gitHubIcon" src="assets/github-brands-solid.svg" alt="Link zum GithubRepo"></a>
+            <a href="https://github.com/CreepyNiki/DartsStats"><img class="gitHubIcon"
+                                                                    src="assets/Pictures/github-brands-solid.svg"
+                                                                    alt="Link zum GithubRepo"></a>
         </div>
     </footer>
 
@@ -69,5 +76,5 @@
 
 
 </body>
-<script src="Ajax.js" defer></script>
+<script src="js/Ajax.js" defer></script>
 </html>

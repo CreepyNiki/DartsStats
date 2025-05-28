@@ -2,7 +2,7 @@
   "name": "dartsstats",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "js/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,6 +13,7 @@
   "private": true,
   "dependencies": {
     "@owsas/nominatim-js": "^1.0.1",
+    "nominatim-js": "^1.0.10",
     "puppeteer": "^24.9.0"
   }
 }

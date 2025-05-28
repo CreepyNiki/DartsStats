@@ -125,7 +125,6 @@ async function extractPlayerData(playerName) {
             const items = Array.from(infoDiv.querySelectorAll('a')).map(a => a.textContent.trim());
 
             let country = null;
-            let city = null;
             let age = null;
 
             // REGEX für 3 Großbuchstaben -> z.B. "ENG" für England -> generiert von DeepSeek
@@ -141,14 +140,7 @@ async function extractPlayerData(playerName) {
                 age = match ? match[1] : null;
             }
 
-            // REGEX für finden eines Textes mit Datum -> z.B. "London, 18/12/2000" -> generiert von DeepSeek
-            const cityItem = items.find(text => /,/.test(text) && /\d{1,2}\/\d{1,2}\/\d{2,4}/.test(text));
-            if (cityItem) {
-                // Extraktion der Stadt aus dem Text
-                city = cityItem.split(",")[0].trim();
-            }
-
-            return { country, city, age };
+            return { country, age };
         })();
 
         return {

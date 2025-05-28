@@ -131,22 +131,83 @@ main {
 }
 
 .players-cell {
-    width: 360px;              /* Breite der Zelle */
-    height: 500px;             /* Höhe der Zelle */
-    border-radius: 8px;
-    background-image: url("assets/Bronze.png");
-    background-size: 360px 500px;   /* Bild kleiner skalieren */
+    width: 400px;
+    height: 540px;
+    background-size: 400px 540px;
     background-repeat: no-repeat;
-    background-position: center 20px; /* Bild zentrieren, etwas nach unten */
     vertical-align: top;
 }
 
-.players-row {
-
+.player {
+    width: 400px;
+    height: 540px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    margin-top: 10px;
 }
 
-.player{
+.player-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 30px;
+    margin-left: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    gap: 10px;
+}
 
+.oom {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 70px;
+    left: 85px;
+}
+
+.flag {
+    width: 55px;
+    height: 35px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    position: absolute;
+    top: 125px;
+    left: 85px;
+}
+
+.age-city {
+    font-size: 0.7em;
+    font-weight: 400;
+    text-align: left;
+    position: absolute;
+    top: 170px;
+    left: 85px;
+}
+
+.player-picture {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    right: 60px;
+    top: 55px;
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.player-name {
+    position: absolute;
+    bottom: 280px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    letter-spacing: 0.01em;
 }
 
 .footer {

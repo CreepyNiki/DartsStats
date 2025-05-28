@@ -34,7 +34,7 @@
 
         <div class="select-country">
             <label for="country-select">Wähle ein Land:</label>
-            <select id="country-select">
+            <select id="country-select" onchange="displayNationPlayers(this.value)">
                 <option value="all">Alle</option>
                 <option value="eng">England</option>
                 <option value="ned">Niederlande</option>
@@ -57,16 +57,17 @@
 <div class="output">
 </div>
 
+    <footer>
+        <div class="footer">
+            <img src="assets/Logo_without_background.png" alt="Logo" class="footerLogo">
+            <p class="footerText">Niklas Halft Matrikelnummer: 7396949</p>
+            <a href="https://github.com/CreepyNiki/DartsStats"><img class="gitHubIcon" src="assets/github-brands-solid.svg" alt="Link zum GithubRepo"></a>
+        </div>
+    </footer>
 
 </main>
 
-<footer>
-    <div class="footer">
-        <img src="assets/Logo_without_background.png" alt="Logo" class="footerLogo">
-        <p class="footerText">Niklas Halft Matrikelnummer: 7396949</p>
-        <a href="https://github.com/CreepyNiki/DartsStats"><img class="gitHubIcon" src="assets/github-brands-solid.svg" alt="Link zum GithubRepo"></a>
-    </div>
-</footer>
+
 </body>
 <script src="Ajax.js" defer></script>
 </html>
